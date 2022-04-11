@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Switch } from 'react-router-dom';
+import { withRouter, HashRouter } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 
@@ -33,14 +33,14 @@ class App extends React.Component {
       <ScrollReveal
         ref="scrollReveal"
         children={() => (
-          <Switch>
+          <HashRouter>
             <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
             <AppRoute exact path="/home" component={Home} layout={LayoutDefault} />
             <AppRoute exact path="/secondary" component={Secondary} layout={LayoutAlternative} />
             <AppRoute exact path="/secondary" component={Secondary} layout={LayoutAlternative} />
             <AppRoute exact path="/login" component={Login} layout={LayoutSignin} />
             <AppRoute exact path="/signup" component={Signup} layout={LayoutSignin} />
-          </Switch>
+          </HashRouter>
         )} />
     );
   }
